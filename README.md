@@ -4,7 +4,7 @@
 
 x402-pilot is the **build/learn/verify** companion to the official **runtime** package [`@x402/mcp`](https://www.npmjs.com/package/@x402/mcp). It does not move money or pay for tools — it helps you write x402 integrations, facilitators, schemes, and extensions, and check them against the spec.
 
-> Why this exists: x402 is a 2025–26 protocol mid v1→v2 transition with a fast-moving extension track. Model training data on it is thin and often wrong. x402-pilot puts the **source-of-truth specs** in front of the agent and routes every task to the right one.
+> Why this exists: x402 settles real value, and a capable model already knows much of the protocol — but *"the model probably remembers"* isn't good enough when money moves. x402-pilot makes the spec the **source of truth** (offline, version-pinned) and adds **executable, non-custodial conformance tools that verify rather than recall** — recompute a settlement against the on-chain balance change, run verify→settle→idempotency against a facilitator, lint a codebase for hardcoded chain/decimals. The corpus keeps you current as the protocol moves; the tools are right regardless of what any model remembers.
 
 ## What's inside
 
@@ -19,16 +19,51 @@ x402-pilot is the **build/learn/verify** companion to the official **runtime** p
 
 See [SCOPE.md](SCOPE.md) for the full plan.
 
-## Use it
+## Quick start
 
-The corpus is meant for direct search — there is no precomputed index:
+**Install it** (Claude Code v2.1+) — add this repo as a marketplace, then install the plugin:
+
+```shell
+/plugin marketplace add DrVelvetFog/x402-pilot
+/plugin install x402-pilot@uig-studios
+```
+
+Or **try it for one session** without installing — clone the repo and launch:
+
+```bash
+claude --plugin-dir ./x402-pilot
+```
+
+**Use it.** The plugin adds these commands (namespaced under `x402-pilot:`):
+
+| You want to… | Command |
+|---|---|
+| Charge for an HTTP endpoint | `/x402-pilot:x402-gate` |
+| Build or audit a facilitator | `/x402-pilot:x402-facilitator` |
+| Author a new-chain / new scheme spec | `/x402-pilot:x402-scheme` |
+| Work with an extension (offers/receipts, gas-sponsoring) | `/x402-pilot:x402-extension` |
+| Review x402 code for spec-compliance | `/x402-pilot:x402-review` |
+| Run verify→settle→idempotency against a facilitator | `/x402-pilot:x402-verify` |
+| Get oriented / route a question | `/x402-pilot:x402-pilot` |
+
+**Worked example — charge for your API in 3 steps:**
+
+1. In your project, run **`/x402-pilot:x402-gate`**.
+2. Answer the prompts (framework, chain, asset, price, facilitator). It reads the live spec and scaffolds a compliant paywall — the price goes in as **atomic units, never a hardcoded decimal**.
+3. Run **`/x402-pilot:x402-verify`** and give it your facilitator URL to prove the flow end-to-end.
+
+The **conformance MCP** (`mcp__x402-conformance__*`) loads automatically with the plugin — your agent can decode a 402, recompute a settlement against the on-chain balance change, or lint a codebase for hardcoded chain/decimals with no extra setup.
+
+<details>
+<summary><strong>Under the hood:</strong> the bundled corpus is searched directly (no precomputed index)</summary>
+
+The agent searches the bundled specs before generating code:
 
 ```
 Glob  .x402-specs/schemes/exact/scheme_exact_*.md     # find the chain specs
 Grep  "PAYMENT-RESPONSE"  .x402-specs/                 # find where a concept is defined
 ```
-
-Start your agent on `agents/x402-pilot-agent.md`, then search the corpus before writing code.
+</details>
 
 ## Provenance & license
 
