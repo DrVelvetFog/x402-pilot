@@ -1,0 +1,22 @@
+x402-pilot
+Copyright 2026 UIG Studios LLC
+
+This product is a developer-assistant plugin for the x402 payment protocol.
+
+It bundles documentation and protocol specifications from the x402 project for
+local, search-based developer assistance:
+
+  - .x402-specs/     — from x402 `specs/`
+  - .x402-docs/      — from x402 `docs/`
+  - .x402-sdk-docs/  — package READMEs from the x402 TypeScript and Python SDKs
+
+That bundled material originates from the x402 project
+(https://github.com/x402-foundation/x402), Copyright 2024 Coinbase, and is
+licensed under the Apache License, Version 2.0. The full Apache-2.0 license text
+is included in LICENSE. The bundled documentation is unmodified except for being
+copied into the .x402-*/ directories; SDK READMEs are renamed for clarity.
+
+x402-pilot itself (the agent, commands, skills, conformance MCP, and scripts) is
+original work by UIG Studios LLC, also offered under Apache-2.0.
+
+To refresh the bundled corpus from upstream, run ./sync-specs.sh.

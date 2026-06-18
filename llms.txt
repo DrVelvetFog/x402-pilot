@@ -1,0 +1,48 @@
+# x402-pilot
+
+> Developer-assistant for building on the **x402** payment protocol — the HTTP-402,
+> stablecoin-over-HTTP payment standard for APIs and AI agents. This plugin bundles
+> the x402 protocol specs, transport bindings, scheme definitions, extension specs,
+> and SDK surface docs for direct search, plus an agent and workflows for authoring
+> and verifying facilitators, schemes, and extensions.
+
+This is the **build/learn/verify** companion to the official **runtime** package
+`@x402/mcp` (which enables paid tool calls and client auto-pay). x402-pilot does not
+move money or pay for tools — it helps you *write and verify x402 code*.
+
+## Bundled corpora (search with Glob + Grep — there is no precomputed index)
+
+- [Protocol specs](.x402-specs/): 42 files — the source of truth
+  - `x402-specification-v1.md`, `x402-specification-v2.md` — core protocol
+  - `transports-v1/`, `transports-v2/` — `http.md`, `mcp.md`, `a2a.md` bindings
+  - `schemes/exact/` — the `exact` scheme across 12 chains/VMs: `scheme_exact_evm.md`,
+    `_sui.md`, `_svm.md`, `_aptos.md`, `_ton.md`, `_near.md`, `_stellar.md`, `_hedera.md`,
+    `_algo.md`, `_concordium.md`, `_cardano.md`, `_keeta.md`, plus the chain-agnostic `scheme_exact.md`
+  - `schemes/upto/`, `schemes/auth-capture/`, `schemes/batch-settlement/` — other scheme families
+  - `extensions/` — `extension-offer-and-receipt.md`, `bazaar.md`,
+    `eip2612_gas_sponsoring.md`, `erc20_gas_sponsoring.md`, `sign-in-with-x.md`,
+    `builder_code.md`, `payment_identifier.md`, `extension-auth-hints.md`,
+    `http-message-signatures.md`
+  - `scheme_template.md`, `scheme_impl_template.md`, `transport_template.md`,
+    `CONTRIBUTING.md` — the authoring templates + the contribution workflow
+- [Guides & concepts](.x402-docs/): 31 files — getting-started, core-concepts,
+  advanced-concepts, guides, dev-tools, schemes, extensions
+- [SDK surface](.x402-sdk-docs/): `ts-core.md`, `ts-mcp.md`, `ts-extensions.md`,
+  `python-x402.md`
+
+## How to use
+
+1. Read `agents/x402-pilot-agent.md` first — it routes a topic to the right corpus
+   and carries the contribution rules.
+2. `Glob` for filenames (e.g. `.x402-specs/schemes/exact/scheme_exact_*.md`) and
+   `Grep` for content within the matching `.x402-*/` directory.
+3. Prefer a worked scheme spec (e.g. `scheme_exact_sui.md`) as a reference when
+   implementing a new chain.
+
+## Important
+
+Your training data about x402 is likely **incomplete or outdated** — x402 is a
+2025–2026 protocol with an active v1→v2 transition and a fast-moving extension
+track. Always search and read these specs before generating x402 code, and never
+hardcode a chain id, token address, or decimals: read them from the
+`PaymentRequired` / scheme definition.

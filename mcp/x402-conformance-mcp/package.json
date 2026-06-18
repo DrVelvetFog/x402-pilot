@@ -1,0 +1,20 @@
+{
+  "name": "x402-conformance-mcp",
+  "version": "0.1.0",
+  "description": "MCP server with x402 conformance + compliance tools: decode a 402 PaymentRequired, inspect a PAYMENT-RESPONSE (with on-chain net-balance truth check), lint a scheme spec, validate an extension payload, statically check code for spec-compliance, and run the verify/settle/idempotency conformance flow against a facilitator. Holds no keys — non-custodial by design.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0"
+  }
+}

@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+*.js.map
+*.log
+
+# The MCP's bundled dist/index.js IS committed (Claude Code runs it directly on
+# install — no build step). Rebuild it with: cd mcp/x402-conformance-mcp && npm run build

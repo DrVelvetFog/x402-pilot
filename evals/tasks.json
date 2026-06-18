@@ -1,0 +1,97 @@
+[
+  {
+    "id": "task-01-usdc-atomic-amount",
+    "title": "Price 0.01 USDC as an atomic-integer string (6 decimals)",
+    "fixturePath": "fixtures/usdc-amount",
+    "prompt": "In src/gate.ts, fill in the `amount` field for a price of 0.01 USDC. USDC has 6 decimals. Use the x402 v2 atomic-units representation.",
+    "category": "stale-training",
+    "passCriteria": {
+      "file": "src/gate.ts",
+      "containsRegex": "amount[\"']?\\s*:\\s*[\"']10000[\"']",
+      "doesNotContainRegex": "amount[\"']?\\s*:\\s*[\"']?0\\.01"
+    }
+  },
+  {
+    "id": "task-02-sui-decimals",
+    "title": "Price 0.001 SUI with the correct 9 decimals (not the USDC 6-decimal habit)",
+    "fixturePath": "fixtures/sui-amount",
+    "prompt": "In src/gate.ts, set `amount` for a price of 0.001 SUI. Use the correct number of decimals for native SUI.",
+    "category": "stale-training",
+    "passCriteria": {
+      "file": "src/gate.ts",
+      "containsRegex": "amount[\"']?\\s*:\\s*[\"']1000000[\"']",
+      "doesNotContainRegex": "[\"']1000[\"']|0\\.001"
+    }
+  },
+  {
+    "id": "task-03-v2-headers",
+    "title": "Use the x402 v2 transport headers (PAYMENT-SIGNATURE / PAYMENT-RESPONSE), not v1 X-PAYMENT or Authorization",
+    "fixturePath": "fixtures/headers",
+    "prompt": "Fix src/client.ts to use the correct x402 v2 HTTP transport headers: send the base64 payment payload in the right request header, and read the settlement result from the right response header. Do not use Authorization.",
+    "category": "stale-training",
+    "passCriteria": {
+      "file": "src/client.ts",
+      "containsRegex": "PAYMENT-SIGNATURE",
+      "alsoContainsRegex": "PAYMENT-RESPONSE",
+      "doesNotContainRegex": "Authorization"
+    }
+  },
+  {
+    "id": "task-04-bind-settled-not-intent",
+    "title": "Bind PAYMENT-RESPONSE to the executed settlement, not the signed intent",
+    "fixturePath": "fixtures/settle-id",
+    "prompt": "In src/facilitator.ts, set the PAYMENT-RESPONSE `transaction` field to the identifier of what actually settled on chain, not the client's pre-execution intent.",
+    "category": "tier-1",
+    "passCriteria": {
+      "file": "src/facilitator.ts",
+      "containsRegex": "transaction\\s*:\\s*settled\\.digest",
+      "doesNotContainRegex": "transaction\\s*:\\s*intent\\.id"
+    }
+  },
+  {
+    "id": "task-05-net-balance-assert",
+    "title": "Assert value/recipient from the net balance change, not by parsing tx outputs",
+    "fixturePath": "fixtures/net-balance",
+    "prompt": "Rewrite assertPaid in src/verify.ts to assert the paid value and recipient from the net balance change to payTo (use tx.balanceChanges), not by parsing transaction outputs.",
+    "category": "tier-1",
+    "passCriteria": {
+      "file": "src/verify.ts",
+      "containsRegex": "balanceChanges",
+      "doesNotContainRegex": "tx\\.outputs"
+    }
+  },
+  {
+    "id": "task-06-no-hardcode-asset",
+    "title": "Read asset/network from the offer; do not hardcode them",
+    "fixturePath": "fixtures/no-hardcode",
+    "prompt": "Fix buildPayment in src/client.ts: read the network and asset from the offer, don't hardcode them.",
+    "category": "tier-1",
+    "passCriteria": {
+      "file": "src/client.ts",
+      "containsRegex": "offer\\.asset",
+      "alsoContainsRegex": "offer\\.network",
+      "doesNotContainRegex": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    }
+  },
+  {
+    "id": "task-07-receipt-binding",
+    "title": "Bind a settlement to a signed receipt so a third party can recompute it (the #2648 pattern)",
+    "fixturePath": "fixtures/receipt-binding",
+    "prompt": "Implement bindReceipt in src/receipt.ts so a third party can recompute the link between the settlement and the signed action receipt offline, with no trust in our logs.",
+    "category": "ambiguous",
+    "passCriteria": {
+      "file": "src/receipt.ts"
+    },
+    "rubric": {
+      "criteria": [
+        "content-address join — the binding is a hash over a canonical serialization of the action tuple / settlement, recomputable offline",
+        "amount is NOT used as the join key — the link binds by content address, so it stays rail-agnostic",
+        "atomic-integer amount + explicit decimals are preserved (not collapsed to a human decimal)",
+        "lifecycle is explicit — seq and terminal are carried so a non-terminal receipt can't be passed off as final",
+        "deterministic canonicalization is used or named (e.g. JCS / RFC 8785 / sorted-key JSON) so two producers get identical bytes"
+      ],
+      "scale": "1-5",
+      "passThreshold": 18
+    }
+  }
+]

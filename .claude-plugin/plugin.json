@@ -1,0 +1,28 @@
+{
+  "name": "x402-pilot",
+  "description": "Developer-assistant plugin for the x402 payment protocol: bundled spec corpus (schemes, transports, extensions), a routing agent, and authoring/review/conformance workflows for facilitators, schemes, and extensions. The build/learn/verify companion to the runtime @x402/mcp.",
+  "version": "0.1.0",
+  "author": { "name": "UIG Studios", "url": "https://github.com/DrVelvetFog" },
+  "keywords": [
+    "x402",
+    "payments",
+    "http-402",
+    "facilitator",
+    "stablecoin",
+    "agentic-payments",
+    "scheme",
+    "exact",
+    "extensions",
+    "sui",
+    "evm",
+    "mcp"
+  ],
+  "homepage": "https://github.com/DrVelvetFog/x402-pilot",
+  "mcpServers": {
+    "x402-conformance": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/x402-conformance-mcp/dist/index.js"],
+      "env": {}
+    }
+  }
+}
