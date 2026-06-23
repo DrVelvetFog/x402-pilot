@@ -1,6 +1,10 @@
 ---
 name: x402-gate
 description: "Scaffolds the resource-server side of x402 — a payment-gated HTTP endpoint that returns a 402 PaymentRequired, accepts and verifies the payment header (X-PAYMENT in v1; PAYMENT-SIGNATURE in v2 — read the transport spec), settles through a facilitator, and returns PAYMENT-RESPONSE. Use whenever the user wants to put a paywall / per-call charge / stablecoin price on an HTTP endpoint or API, make an endpoint agent-payable, add x402 to an express/hono/next/flask/fastapi server, or 'charge for this route'. Reads the current exact-scheme and transport specs from the bundled corpus before generating, wires facilitator/asset/price from config (never hardcoded), and emits a minimal spec-compliant gate plus a client test. Does NOT build the facilitator itself (use /x402-facilitator) and does NOT add paid tools to an MCP server (that is the runtime @x402/mcp)."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-gate — add an x402 paywall to an HTTP endpoint

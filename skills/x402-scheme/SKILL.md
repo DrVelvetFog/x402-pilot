@@ -1,6 +1,10 @@
 ---
 name: x402-scheme
 description: "Authors a protocol-level x402 spec — either a new-chain binding of an existing scheme (e.g. exact for a chain that lacks one) or a brand-new scheme family. Use whenever the user wants to add a chain to x402, write a scheme spec, propose a new payment shape to the Foundation, or formalize how settlement works on a rail. Loads scheme_template.md, scheme_impl_template.md, and CONTRIBUTING.md from the corpus, uses a worked spec (scheme_exact_sui.md) as the structural reference, keeps chain specifics out of the chain-agnostic sections, and enforces the contribution workflow (new scheme = spec PR first; new chain = 3-PR sequence spec→one SDK→others). Does NOT implement an existing scheme (use /x402-facilitator) — this produces the spec."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-scheme — author a scheme / new-chain spec

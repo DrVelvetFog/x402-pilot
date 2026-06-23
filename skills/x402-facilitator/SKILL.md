@@ -1,6 +1,10 @@
 ---
 name: x402-facilitator
 description: "Builds or audits an x402 facilitator — the service that verifies a PaymentPayload and settles it on-chain for a given scheme/chain. Use whenever the user wants to stand up a facilitator, add a chain to facilitator support, implement /verify and /settle, run their own settlement service instead of a hosted one, or audit an existing facilitator for correctness. Reads the chain's exact-scheme spec from the corpus and bakes in the hard-won cross-rail lessons: assert value/recipient from the net balance change (not the signed intent), make double-settle idempotent, keep a spent-check where dry-run can't detect spent payments, bind the executed settlement id, and state custody/visibility/replay assumptions. Authored by the builder of the first x402 facilitator on Sui. Does NOT add a paywall to an endpoint (use /x402-gate) and does NOT write a missing scheme spec (use /x402-scheme first)."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-facilitator — build or audit a verify+settle service

@@ -1,6 +1,10 @@
 ---
 name: x402-extension
 description: "Authors or integrates an x402 extension — the typed {info, schema} payloads attached to PaymentRequired.extensions / PaymentPayload.extensions. Use whenever the user wants signed offers/receipts, discovery metadata (bazaar), gas-sponsoring (eip2612/erc20), sign-in-with-x, idempotency / payment-identifier keys, auth-hints, or http-message-signatures — to consume an existing extension or propose a new one. Reads the extension spec from .x402-specs/extensions/ and the @x402/extensions SDK surface, and for receipt/accountability work keeps settlement and receipt as two objects joined by one content-addressed hash, amount as atomic-integer + explicit decimals, and the binding rail-agnostic. Does NOT change the scheme itself (use /x402-scheme when the need is protocol-level)."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-extension — author or integrate an extension

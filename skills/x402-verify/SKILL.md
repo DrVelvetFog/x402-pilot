@@ -1,6 +1,10 @@
 ---
 name: x402-verify
 description: "Runs the x402 conformance flow against a live or local facilitator — verify happy-path, settle, idempotent re-settle, tampered-payload reject, wrong-recipient reject, underpay reject, and spent-coin re-verify — and confirms PAYMENT-RESPONSE matches what actually settled on-chain (net balance change), not just what the facilitator reported. Use whenever the user wants to verify/test/prove a facilitator works, gate a facilitator repo in CI, or confirm someone else's facilitator before relying on it. Reads the chain's exact-scheme spec for the correct shapes, then drives the sequence via Bash (curl + the chain RPC) and reports a pass/fail line per check — the shape the #2648 recompute used. Does NOT build the facilitator (use /x402-facilitator)."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-verify — exercise a facilitator end-to-end

@@ -1,6 +1,10 @@
 ---
 name: x402-review
 description: "Spec-compliance review of x402 code — a gate, a facilitator, an extension, or a PR — against the bundled specs and the x402-foundation contribution rules. Use whenever the user asks to review x402 code, audit an x402 integration or facilitator, pre-flight a PR to x402-foundation/x402, or check 'is this x402 code correct/safe to ship'. Catches the high-severity classes: hardcoded chain id / token address / decimals, human-decimal amounts instead of atomic-integer + decimals, binding the signed intent instead of the settled effect, missing double-settle idempotency, missing spent-check, and contribution-hygiene gaps (unsigned commits, non-conventional messages, undisclosed AI usage, unrequested features, missing changelog fragment). Reads the spec first and cites it for every finding — spec wins over memory. Does NOT generate the code (use /x402-gate, /x402-facilitator, /x402-extension)."
+license: Apache-2.0
+metadata:
+  author: UIG Studios
+  version: "0.1.0"
 ---
 
 # x402-review — spec-compliance + contribution review
