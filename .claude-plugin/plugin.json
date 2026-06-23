@@ -18,6 +18,8 @@
     "mcp"
   ],
   "homepage": "https://github.com/DrVelvetFog/x402-pilot",
+  "repository": "https://github.com/DrVelvetFog/x402-pilot",
+  "license": "Apache-2.0",
   "mcpServers": {
     "x402-conformance": {
       "command": "node",
