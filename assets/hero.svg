@@ -1,0 +1,42 @@
+<svg width="1280" height="440" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d97757"/>
+      <stop offset="1" stop-color="#e8a87c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="440" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1280" height="440" fill="none" stroke="#21262d" stroke-width="2"/>
+  <!-- window chrome -->
+  <circle cx="38" cy="36" r="7" fill="#ff5f56"/>
+  <circle cx="62" cy="36" r="7" fill="#ffbd2e"/>
+  <circle cx="86" cy="36" r="7" fill="#27c93f"/>
+  <text x="1242" y="41" text-anchor="end" font-size="13" fill="#6e7681">~/project — claude code</text>
+  <line x1="0" y1="64" x2="1280" y2="64" stroke="#21262d" stroke-width="2"/>
+  <!-- title -->
+  <text x="60" y="170" font-size="78" font-weight="700" fill="#f0f6fc">x402<tspan fill="url(#accent)">-pilot</tspan></text>
+  <text x="64" y="212" font-size="24" fill="#8b949e">build · learn · verify the x402 payment protocol — in Claude Code</text>
+  <!-- command palette -->
+  <text x="64" y="286" font-size="19" fill="#d97757">›</text>
+  <text x="88" y="286" font-size="19" fill="#c9d1d9">/x402-gate</text>
+  <text x="300" y="286" font-size="16" fill="#6e7681">charge for an HTTP endpoint</text>
+  <text x="64" y="322" font-size="19" fill="#d97757">›</text>
+  <text x="88" y="322" font-size="19" fill="#c9d1d9">/x402-facilitator</text>
+  <text x="300" y="322" font-size="16" fill="#6e7681">build or audit a facilitator</text>
+  <text x="64" y="358" font-size="19" fill="#d97757">›</text>
+  <text x="88" y="358" font-size="19" fill="#c9d1d9">/x402-verify</text>
+  <text x="300" y="358" font-size="16" fill="#6e7681">verify → settle → idempotency, recomputed on-chain</text>
+  <text x="64" y="394" font-size="19" fill="#d97757">›</text>
+  <text x="88" y="394" font-size="19" fill="#c9d1d9">/x402-review</text>
+  <text x="300" y="394" font-size="16" fill="#6e7681">lint for hardcoded chain / decimals</text>
+  <!-- right rail stats -->
+  <text x="1216" y="286" text-anchor="end" font-size="15" fill="#8b949e">7 commands</text>
+  <text x="1216" y="316" text-anchor="end" font-size="15" fill="#8b949e">6 conformance MCP tools</text>
+  <text x="1216" y="346" text-anchor="end" font-size="15" fill="#8b949e">12 chains</text>
+  <text x="1216" y="376" text-anchor="end" font-size="15" fill="#27c93f">non-custodial · holds no keys</text>
+  <text x="1216" y="406" text-anchor="end" font-size="13" fill="#6e7681">Apache-2.0 · UIG Studios</text>
+</svg>

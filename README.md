@@ -1,5 +1,15 @@
 # x402-pilot
 
+![x402-pilot — build, learn, verify the x402 payment protocol in Claude Code](assets/hero.png)
+
+[![CI](https://github.com/DrVelvetFog/x402-pilot/actions/workflows/skills.yml/badge.svg)](https://github.com/DrVelvetFog/x402-pilot/actions/workflows/skills.yml)
+[![release](https://img.shields.io/badge/release-v0.1.0-blue)](CHANGELOG.md)
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
+[![x402](https://img.shields.io/badge/x402-12%20chains-1f6feb)](https://github.com/x402-foundation/x402)
+
+**7 commands · 6 conformance MCP tools · offline spec corpus across 12 chains · non-custodial (holds no keys, signs nothing).**
+
 **The developer-assistant for the [x402](https://github.com/x402-foundation/x402) payment protocol** — a Claude Code plugin that bundles the x402 spec surface and gives your agent the context and workflows to *build, learn, and verify* x402 code.
 
 x402-pilot is the **build/learn/verify** companion to the official **runtime** package [`@x402/mcp`](https://www.npmjs.com/package/@x402/mcp). It does not move money or pay for tools — it helps you write x402 integrations, facilitators, schemes, and extensions, and check them against the spec.
@@ -64,6 +74,20 @@ Glob  .x402-specs/schemes/exact/scheme_exact_*.md     # find the chain specs
 Grep  "PAYMENT-RESPONSE"  .x402-specs/                 # find where a concept is defined
 ```
 </details>
+
+## Ecosystem
+
+x402-pilot is the **build/learn/verify** layer of a larger x402-on-Sui stack — all built by the same author:
+
+| Repo | What it is |
+|---|---|
+| [**sui-x402-facilitator**](https://github.com/DrVelvetFog/sui-x402-facilitator) | The first x402 facilitator on Sui — non-custodial, live on mainnet. The *runtime* x402-pilot teaches you to build. |
+| [**x402-sui-stack**](https://github.com/DrVelvetFog/x402-sui-stack) | The builder front door: facilitator + tooling + a one-command demo that settles a real payment on Sui mainnet. |
+| [**x402-charging-agent**](https://github.com/DrVelvetFog/x402-charging-agent) | A reference agent — an EV that pays for its own charge over x402 with usage-metered `upto` billing and on-chain settlement receipts. |
+
+## Contributing & security
+
+PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution rules (the corpus is synced from upstream, never hand-edited) and [SECURITY.md](SECURITY.md) for how to report a vulnerability. All conduct is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Provenance & license
 
