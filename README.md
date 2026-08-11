@@ -81,7 +81,7 @@ x402-pilot is the **build/learn/verify** layer of a larger x402-on-Sui stack —
 
 | Repo | What it is |
 |---|---|
-| [**sui-x402-facilitator**](https://github.com/DrVelvetFog/sui-x402-facilitator) | The first x402 facilitator on Sui — non-custodial, live on mainnet. The *runtime* x402-pilot teaches you to build. |
+| [**sui-x402-facilitator**](https://github.com/DrVelvetFog/sui-x402-facilitator) | An independent x402 facilitator on Sui — non-custodial, live on mainnet. The *runtime* x402-pilot teaches you to build. |
 | [**x402-sui-stack**](https://github.com/DrVelvetFog/x402-sui-stack) | The builder front door: facilitator + tooling + a one-command demo that settles a real payment on Sui mainnet. |
 | [**x402-charging-agent**](https://github.com/DrVelvetFog/x402-charging-agent) | A reference agent — an EV that pays for its own charge over x402 with usage-metered `upto` billing and on-chain settlement receipts. |
 
@@ -95,4 +95,4 @@ x402-pilot (agent, commands, skills, MCP, scripts) is original work by **UIG Stu
 
 The bundled `.x402-specs/`, `.x402-docs/`, and `.x402-sdk-docs/` are copied from the [x402 project](https://github.com/x402-foundation/x402) (© Coinbase, Apache-2.0) for local developer assistance — see [NOTICE](NOTICE). Refresh them with [`sync-specs.sh`](sync-specs.sh).
 
-Built by the author of the [first x402 facilitator on Sui](https://github.com/DrVelvetFog/sui-x402-facilitator).
+Built by the author of [an independent x402 facilitator on Sui](https://github.com/DrVelvetFog/sui-x402-facilitator).

@@ -4,7 +4,7 @@
 
 ## Strategic frame (why build this)
 - **The gap is real.** There is an official **runtime** MCP (`@x402/mcp` — lets you build paid MCP tools and auto-pay from MCP clients) but **no developer-assistant**: nothing that bundles the spec for offline/version-pinned reference, scaffolds a spec-compliant integration, or *verifies* a facilitator end-to-end with executable checks. (A capable model knows much of the protocol from training — see `evals/BASELINE.md` — so the value here is **verification, offline currency, and tooling**, not a knowledge crutch.) `sui-pilot` proved the dev-assistant shape is valuable for an ecosystem.
-- **It showcases exactly the author's credibility.** Built the **first x402 facilitator on Sui**, contributor in the `exact`-scheme + receipt-extension lane (x402#2648), and PR author to the directory (x402#2619). A facilitator/scheme/extension authoring toolkit turns that expertise into community infrastructure.
+- **It showcases exactly the author's credibility.** Built **an independent x402 facilitator on Sui**, contributor in the `exact`-scheme + receipt-extension lane (x402#2648), and PR author to the directory (x402#2619). A facilitator/scheme/extension authoring toolkit turns that expertise into community infrastructure.
 - **Ownership:** unlike `sui-pilot` (Alvaro Lillo's, MystenLabs), this is **fully owned by UIG Studios** — a clean distribution asset.
 - **Goal:** a high-signal community gift → cement value to the x402 / Coinbase team → paid contract / Foundation-tooling adoption.
 

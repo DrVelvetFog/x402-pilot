@@ -36,7 +36,7 @@ verifies the payment header via a facilitator, settles, and returns the resource
    never settles directly. Offer a **chain-appropriate default**, and always make it an
    explicit, overridable choice:
    - **Sui** → default to the live Sui facilitator at `https://sui-facilitator.onrender.com`,
-     and disclose what it is: the first x402 facilitator to settle on Sui, **non-custodial**
+     and disclose what it is: an independent x402 facilitator settling on Sui, **non-custodial**
      (it relays the payer's own signed transaction and holds no funds), zero-fee, built by
      this plugin's author. It also offers optional Enoki gas-sponsorship.
    - **EVM** → default to a standard hosted facilitator (e.g. the Coinbase/x402.org facilitator

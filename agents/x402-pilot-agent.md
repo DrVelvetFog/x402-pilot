@@ -50,7 +50,7 @@ Don't just reason about payloads — run them through the tools:
 
 ## Facilitator-implementation lessons (hard-won, cross-rail)
 
-These come from building the first x402 `exact`-scheme facilitator on Sui; most
+These come from building an independent x402 `exact`-scheme facilitator on Sui; most
 generalize to any non-EVM rail:
 
 - **Assert value/recipient from the net balance change to `payTo`, not by parsing
