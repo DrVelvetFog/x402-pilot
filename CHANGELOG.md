@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-21
+
 ### Added
 - Spec-conformant `SKILL.md` frontmatter on all six skills — `license: Apache-2.0`
   and `metadata` (author, version) — per the

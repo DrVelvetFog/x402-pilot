@@ -1,7 +1,7 @@
 {
   "name": "x402-pilot",
   "description": "Developer-assistant plugin for the x402 payment protocol: bundled spec corpus (schemes, transports, extensions), a routing agent, and authoring/review/conformance workflows for facilitators, schemes, and extensions. The build/learn/verify companion to the runtime @x402/mcp.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": { "name": "UIG Studios", "url": "https://github.com/DrVelvetFog" },
   "keywords": [
     "x402",

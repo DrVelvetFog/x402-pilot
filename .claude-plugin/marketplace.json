@@ -10,7 +10,7 @@
       "name": "x402-pilot",
       "source": "./",
       "description": "Developer-assistant for the x402 payment protocol: bundled spec corpus, a routing agent, authoring/review/conformance workflows, and a non-custodial conformance MCP. The build/learn/verify companion to the runtime @x402/mcp.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

@@ -4,7 +4,7 @@ description: "Spec-compliance review of x402 code — a gate, a facilitator, an 
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # x402-review — spec-compliance + contribution review
