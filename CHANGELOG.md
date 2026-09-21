@@ -22,6 +22,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the doc-first iron rules when working in an x402 project, and stays silent in
   unrelated sessions.
 
+### Security
+- Conformance MCP: updated `fast-uri` to 3.1.8 (host-confusion and SSRF
+  advisories) and rebuilt the bundled `dist/index.js`, the only one of the
+  flagged packages that ships in the bundle. `hono`, `@hono/node-server`, `qs`
+  and `ip-address` were also updated in the lockfile; they belong to the MCP
+  SDK's HTTP transport, which this stdio server never loads.
+
 ### Notes
 - Multi-harness packaging (Codex / Cursor / Gemini manifests) is deferred until
   each can be install-tested on its own harness.
