@@ -56,6 +56,8 @@ claude --plugin-dir ./x402-pilot
 | Run verify→settle→idempotency against a facilitator | `/x402-pilot:x402-verify` |
 | Get oriented / route a question | `/x402-pilot:x402-pilot` |
 
+> **Need a real endpoint to run `/x402-pilot:x402-verify` against?** See [`examples/live-evm-verify-target.md`](examples/live-evm-verify-target.md) — a known-good live Base (EVM) x402 **v2** seller with a free, no-wallet preview, so you can inspect the response shape before wiring up a paid call.
+
 **Worked example — charge for your API in 3 steps:**
 
 1. In your project, run **`/x402-pilot:x402-gate`**.
