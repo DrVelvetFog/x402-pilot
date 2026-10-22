@@ -6,12 +6,19 @@ gives you a known-good **EVM / Base mainnet** x402 **v2** seller to point the
 verify flow (and `/x402-review`) at when you want to exercise the `exact` EVM
 scheme end to end.
 
-It is an independent public seller (Grey Ridge Signals, listed on x402scan and
-in the CDP Bazaar discovery index). Every value the verify flow needs —
+It is an independent public seller (Grey Ridge Signals, listed on x402scan —
+same `payTo` as the live challenge, so the identity is verifiable there;
+separately submitted to the CDP Bazaar discovery index). Every value the
+verify flow needs —
 network, asset, `payTo`, atomic `amount`, `maxTimeoutSeconds` — is read **from
 the decoded `PaymentRequired` challenge**, never hardcoded, per
 [`.x402-specs/schemes/exact/scheme_exact_evm.md`](../.x402-specs/schemes/exact/scheme_exact_evm.md)
 and the base [`scheme_exact.md`](../.x402-specs/schemes/exact/scheme_exact.md).
+
+> **Whose verdict is this?** The `SAFE`/`CAUTION`/`AVOID` and `go`/`hold`/`block`
+> outputs are **Grey Ridge Signals' own analysis**. x402-pilot points at this
+> endpoint purely as a live `exact`-EVM target to exercise the verify/review
+> flow end to end — it neither produces nor vouches for the safety verdicts.
 
 ## 1. See the response shape first — free, no wallet
 
