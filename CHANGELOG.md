@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- `/x402-spend-limit` command and skill — spending limits for x402 payers: the facilitator-side pre-check (registry → mirror → `canSpend`, checked before verify and before settle, fail closed) and a guided testnet setup of a cross-chain agent allowance with Pocket Money. Marked throughout as a draft proposal, not part of the x402 specification.
 - `examples/live-evm-verify-target.md` — a known-good live Base (EVM) x402 v2 seller to point `/x402-verify` and `/x402-review` at, with a free no-wallet preview and all payment params read from the decoded `PaymentRequired` challenge (no hardcoded chain/asset/amount).
 
 ## [0.1.1] - 2026-09-21

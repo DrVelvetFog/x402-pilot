@@ -36,5 +36,6 @@ relied on. Your training data on x402 is likely stale — the corpus is the sour
 - `/x402-extension` — author or integrate an extension
 - `/x402-review` — spec-compliance review of x402 code
 - `/x402-verify` — run the verify→settle→idempotency conformance flow
+- `/x402-spend-limit` — spending limits for payers, and the facilitator check that honours them (draft, not spec)
 
 You will now be connected to the x402-pilot-agent.

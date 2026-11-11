@@ -8,7 +8,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
 [![x402](https://img.shields.io/badge/x402-12%20chains-1f6feb)](https://github.com/x402-foundation/x402)
 
-**7 commands · 6 conformance MCP tools · offline spec corpus across 12 chains · non-custodial (holds no keys, signs nothing).**
+**8 commands · 6 conformance MCP tools · offline spec corpus across 12 chains · non-custodial (holds no keys, signs nothing).**
 
 **The developer-assistant for the [x402](https://github.com/x402-foundation/x402) payment protocol** — a Claude Code plugin that bundles the x402 spec surface and gives your agent the context and workflows to *build, learn, and verify* x402 code.
 
@@ -23,7 +23,7 @@ x402-pilot is the **build/learn/verify** companion to the official **runtime** p
 | **Bundled spec corpus** — 77 files: protocol v1/v2, transports (http/mcp/a2a), `exact` scheme across 12 chains (EVM, Sui, SVM, Aptos, TON, NEAR, Stellar, Hedera, Algorand, Concordium, Cardano, Keeta), other scheme families, extension specs, authoring templates, SDK READMEs | ✅ Phase 0 |
 | **Routing agent** (`agents/x402-pilot-agent.md`) — routes a topic to the right corpus; carries the contribution rules + facilitator-implementation lessons | ✅ Phase 0 |
 | **`llms.txt`** — AI entry-point manifest | ✅ Phase 0 |
-| **Commands / skills** — `/x402-pilot`, `/x402-gate`, `/x402-facilitator`, `/x402-scheme`, `/x402-extension`, `/x402-review`, `/x402-verify` | ✅ Phase 1 |
+| **Commands / skills** — `/x402-pilot`, `/x402-gate`, `/x402-facilitator`, `/x402-scheme`, `/x402-extension`, `/x402-review`, `/x402-verify`, `/x402-spend-limit` | ✅ Phase 1 |
 | **Conformance MCP** ([`mcp/x402-conformance-mcp`](mcp/x402-conformance-mcp/)) — `decode_402`, `inspect_payment_response` (with on-chain net-balance truth check), `check_compliance`, `lint_scheme_spec`, `validate_extension`, `run_conformance`. Non-custodial: holds no keys. | ✅ Phase 2 |
 | **Evals** ([`evals/`](evals/)) — 7 stale-training tasks, `baseline` vs `pilot` A/B, auto-scored to HTML. Built & validated; run with budget. | ✅ Phase 3 |
 
@@ -54,6 +54,7 @@ claude --plugin-dir ./x402-pilot
 | Work with an extension (offers/receipts, gas-sponsoring) | `/x402-pilot:x402-extension` |
 | Review x402 code for spec-compliance | `/x402-pilot:x402-review` |
 | Run verify→settle→idempotency against a facilitator | `/x402-pilot:x402-verify` |
+| Cap what an agent can spend, or make a facilitator honour a payer's limit (draft, not spec) | `/x402-pilot:x402-spend-limit` |
 | Get oriented / route a question | `/x402-pilot:x402-pilot` |
 
 > **Need a real endpoint to run `/x402-pilot:x402-verify` against?** See [`examples/live-evm-verify-target.md`](examples/live-evm-verify-target.md) — a known-good live Base (EVM) x402 **v2** seller with a free, no-wallet preview, so you can inspect the response shape before wiring up a paid call.
