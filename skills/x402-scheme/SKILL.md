@@ -4,7 +4,7 @@ description: "Authors a protocol-level x402 spec — either a new-chain binding 
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # x402-scheme — author a scheme / new-chain spec

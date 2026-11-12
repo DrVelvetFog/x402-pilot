@@ -4,7 +4,7 @@ description: "Authors or integrates an x402 extension — the typed {info, schem
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # x402-extension — author or integrate an extension

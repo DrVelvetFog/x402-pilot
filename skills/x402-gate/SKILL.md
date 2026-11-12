@@ -4,7 +4,7 @@ description: "Scaffolds the resource-server side of x402 — a payment-gated HTT
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # x402-gate — add an x402 paywall to an HTTP endpoint

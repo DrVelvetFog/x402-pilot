@@ -4,7 +4,7 @@ description: "Spending limits for x402 payers. Facilitator/seller side: adds a p
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.1.1"
+  version: "0.2.0"
 ---
 
 # x402-spend-limit — a limit the payer can't talk its way past
