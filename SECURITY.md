@@ -28,3 +28,17 @@ You can expect an acknowledgement within 72 hours and a status update as we inve
 
 - Issues in the upstream [x402 protocol](https://github.com/x402-foundation/x402) itself — report those upstream.
 - The `@x402/mcp` runtime package — that's a separate project.
+
+## Scanning this plugin
+
+If you run [SkillSpector](https://github.com/NVIDIA/SkillSpector) on this repo you'll get a "do not install" verdict out of the box. Almost all of it comes from the bundled x402 spec corpus: example JSON, sample `fetch` calls and OAuth prose in protocol docs trip rules written for skill instructions. The lockfile gets flagged as "unpinned" too.
+
+We read every finding against the source (SkillSpector 2.12.0, static stage, 2026-11-12) and recorded each one with a reason in `.skillspector-baseline.yaml`:
+
+```bash
+skillspector scan . --no-llm --baseline .skillspector-baseline.yaml --show-suppressed
+```
+
+With the baseline the scan reports no active findings. It still says "caution", because the scanner can't fully parse some files, including the minified `mcp/x402-conformance-mcp/dist/index.js`. You can build that bundle yourself from `src/` with `npm run build`.
+
+Don't take the baseline on trust. It's a list of claims you can check. Scan a clean checkout; a working folder with `node_modules/` in it produces thousands of unrelated findings.

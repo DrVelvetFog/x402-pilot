@@ -31,8 +31,10 @@ tmpdir copies of the fixtures, never your working tree.
 - The conformance MCP built (`cd mcp/x402-conformance-mcp && npm i && npm run build`) — if
   absent, the `pilot` arm still runs corpus-only and the runner says so.
 
-The runner uses `--dangerously-skip-permissions` so the unattended agent can edit files and
-call tools without prompts. Safe here: it operates only on throwaway tmpdir fixture copies.
+The task runs use `--dangerously-skip-permissions` so the unattended agent can edit files and
+call tools without prompts. Safe here: they operate only on throwaway tmpdir fixture copies.
+The scoring turn reads what those runs wrote, so it runs with read-only tools (Read, Glob,
+Grep) and no permission bypass.
 
 ## The tasks (7)
 
