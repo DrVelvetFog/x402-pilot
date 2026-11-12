@@ -1,0 +1,72 @@
+# SkillSpector baseline for x402-pilot.
+#
+# Every entry below is a finding from `skillspector scan . --no-llm` that was read
+# against the source and judged not to be a vulnerability. Each carries its reason.
+# Reviewed with SkillSpector 2.12.0 (static stage only) on 2026-11-12.
+#
+#   skillspector scan . --no-llm --baseline .skillspector-baseline.yaml
+#   skillspector scan . --no-llm --baseline .skillspector-baseline.yaml --show-suppressed
+#
+# Scan a clean checkout, not a working folder that has node_modules/ in it.
+#
+# The corpus rules are scoped by rule id and directory, so a NEW match of the same rule
+# in a refreshed corpus is suppressed too. After ./sync-specs.sh, review the corpus diff
+# in git and rerun with --show-suppressed.
+
+version: 2
+scanner_version: 2.12.0
+
+rules:
+  # --- Bundled x402 corpus: protocol specs and docs copied from the upstream x402 repo
+  # (Apache-2.0, see NOTICE). Reference text the plugin searches; nothing here executes.
+  - id: "YR4"
+    path: ".x402-*/*"
+    reason: "Spec examples: JSON schemas with \"description\" keys and base64/hex sample payloads, not MCP tool metadata"
+  - id: "E1"
+    path: ".x402-*/*"
+    reason: "Documentation code samples calling https://api.example.com/ and the Coinbase CDP API"
+  - id: "PE3"
+    path: ".x402-*/*"
+    reason: "Prose describing OAuth access tokens in the auth-hints extension spec"
+  - id: "AS2"
+    path: ".x402-*/*"
+    reason: "Bazaar docs describing how a client lists MCP tools; no config file is read"
+  - id: "EA2"
+    path: ".x402-*/*"
+    reason: "Docs describing token approval flows and a local-testing auto-approve example"
+  - id: "EA3"
+    path: ".x402-*/*"
+    reason: "Marketing sentence in the Bazaar overview"
+  - id: "P9"
+    path: ".x402-*/*"
+    reason: "Column padding in a wide Markdown table"
+
+  # --- Conformance MCP server dependencies.
+  - id: "SC1"
+    path: "mcp/x402-conformance-mcp/package-lock.json"
+    reason: "This is the lockfile: it pins exact versions with integrity hashes. The ranges are dependency metadata"
+  - id: "SC1"
+    path: "mcp/x402-conformance-mcp/package.json"
+    reason: "Caret ranges are resolved by the committed lockfile, and the plugin ships the prebuilt dist/index.js"
+
+fingerprints:
+  - hash: sha256:67bda215b21fd4cc2e996e47e7ce3be590331c1d2d57b602e8d81d48556bd217
+    rule_id: BH1
+    file: hooks/hooks.json
+    reason: "Intended: the SessionStart hook greps manifest files for 'x402' and prints a reminder. No network, no writes"
+  - hash: sha256:6411d83a0b8014cfb5591aa72686853da89a4620b41e3b66cc163c4fd1f2384a
+    rule_id: AS2
+    file: evals/run-comparison.sh
+    reason: "The eval harness writes its own .mcp.json into a throwaway tmpdir; it reads no existing MCP config"
+  - hash: sha256:be6be38b31f6117dc49270132d2ce2e089997e971a156d1735c71e7347ee9ab7
+    rule_id: EA5
+    file: evals/run-comparison.sh
+    reason: "Maintainer-only eval harness: calling `claude -p` is its purpose and is documented in evals/README.md. Not run by the plugin"
+  - hash: sha256:dbe3ec43593d8a656b9ee935312396b967e0aa2608a0d750a7c9dc4794d6d65d
+    rule_id: AR1
+    file: skills/x402-spend-limit/SKILL.md
+    reason: "'Do not refuse payers who never opted in' is payment logic for facilitator code, not an instruction to the model"
+  - hash: sha256:8a3416374f0368836a51c635c1f7cd9b32a13df1da0c74db8699dbd35b685381
+    rule_id: TM1
+    file: sync-specs.sh
+    reason: "Maintainer script removes the plugin's own corpus folders before re-copying them; path is resolved and quoted under set -euo pipefail"

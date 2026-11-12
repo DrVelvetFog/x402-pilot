@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `.skillspector-baseline.yaml` — every SkillSpector finding on this repo, reviewed against the source and recorded with a reason. See "Scanning this plugin" in `SECURITY.md`.
+
+### Changed
+- `evals/run-comparison.sh` — the scoring turn now runs with read-only tools (Read, Glob, Grep) instead of `--dangerously-skip-permissions`. Task runs are unchanged.
+
 ## [0.2.0] - 2026-11-12
 
 ### Added

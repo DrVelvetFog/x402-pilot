@@ -18,9 +18,10 @@
 #   bash evals/run-comparison.sh --task-ids '^task-0[12]'   # subset by id regex
 #   bash evals/run-comparison.sh --resume evals/results/<TS>
 #
-# This runner uses `--dangerously-skip-permissions` so the unattended agent can edit
-# files / call tools without prompts. It only ever operates on throwaway tmpdir copies
-# of the fixtures — never your working tree.
+# The task runs use `--dangerously-skip-permissions` so the unattended agent can edit
+# files / call tools without prompts. They only ever operate on throwaway tmpdir copies
+# of the fixtures — never your working tree. The scoring turn does not: it reads what
+# those runs wrote, so it is limited to read-only tools (Read, Glob, Grep).
 
 set -euo pipefail
 
@@ -161,7 +162,10 @@ if [[ "$SCORE" == "true" ]]; then
   prompt="${prompt//RESULTS_DIR_PLACEHOLDER/$RESULTS_DIR}"
   prompt="${prompt//TASKS_FILE_PLACEHOLDER/$TASKS_FILE}"
   prompt="${prompt//VERSIONS_PLACEHOLDER/$VERSIONS}"
-  claude -p --dangerously-skip-permissions "$prompt" > "$RESULTS_DIR/score.html"
+  # The scorer only reads run artefacts and prints HTML, and those artefacts are
+  # model-written, so it gets read-only tools and no permission bypass.
+  claude -p "$prompt" --tools "Read,Glob,Grep" --allowedTools "Read,Glob,Grep" \
+      --add-dir "$RESULTS_DIR" "$(dirname "$TASKS_FILE")" < /dev/null > "$RESULTS_DIR/score.html"
   echo "Scored report: $RESULTS_DIR/score.html"
 fi
 echo "Done."
