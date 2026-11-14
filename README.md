@@ -3,7 +3,7 @@
 ![x402-pilot — build, learn, verify the x402 payment protocol in Claude Code](assets/hero.png)
 
 [![CI](https://github.com/DrVelvetFog/x402-pilot/actions/workflows/skills.yml/badge.svg)](https://github.com/DrVelvetFog/x402-pilot/actions/workflows/skills.yml)
-[![release](https://img.shields.io/badge/release-v0.1.0-blue)](CHANGELOG.md)
+[![release](https://img.shields.io/badge/release-v0.2.0-blue)](CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
 [![x402](https://img.shields.io/badge/x402-12%20chains-1f6feb)](https://github.com/x402-foundation/x402)
@@ -87,6 +87,12 @@ x402-pilot is the **build/learn/verify** layer of a larger x402-on-Sui stack —
 | [**sui-x402-facilitator**](https://github.com/DrVelvetFog/sui-x402-facilitator) | An independent x402 facilitator on Sui — non-custodial, live on mainnet. The *runtime* x402-pilot teaches you to build. |
 | [**x402-sui-stack**](https://github.com/DrVelvetFog/x402-sui-stack) | The builder front door: facilitator + tooling + a one-command demo that settles a real payment on Sui mainnet. |
 | [**x402-charging-agent**](https://github.com/DrVelvetFog/x402-charging-agent) | A reference agent — an EV that pays for its own charge over x402 with usage-metered `upto` billing and on-chain settlement receipts. |
+
+## What it runs and connects to
+
+- **A SessionStart hook** (`hooks/session-start.sh`) reads your project's dependency manifests (`package.json`, `pyproject.toml`, `requirements.txt`, `go.mod`, `Cargo.toml`) and root filenames to check whether the project uses x402. If it does, it adds a short reminder to Claude's context. It reads nothing else and sends nothing anywhere.
+- **The conformance MCP server** runs locally with Node (`mcp/x402-conformance-mcp/dist/index.js`, bundled from the TypeScript in `src/`). It holds no keys and signs nothing. Three tools are fully offline (`check_compliance`, `lint_scheme_spec`, `validate_extension`). Three can make network requests, and only to URLs you pass in: `decode_402` fetches a resource URL to read its 402 response (or decodes one you paste, offline), `run_conformance` calls the facilitator URL and optional resource URL you give it, and `inspect_payment_response` calls the chain RPC URL you give it. Requests go straight from your machine to that endpoint.
+- **No telemetry, no accounts, no analytics.** See [PRIVACY.md](PRIVACY.md).
 
 ## Contributing & security
 

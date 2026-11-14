@@ -1,6 +1,6 @@
 {
   "name": "uig-studios",
-  "description": "UIG Studios plugins for Claude Code — developer tooling for the x402 payment protocol and the Sui ecosystem.",
+  "description": "UIG Studios plugins for Claude Code \u2014 developer tooling for the x402 payment protocol and the Sui ecosystem.",
   "owner": {
     "name": "UIG Studios",
     "url": "https://github.com/DrVelvetFog"
@@ -10,6 +10,12 @@
       "name": "x402-pilot",
       "source": "./",
       "description": "Developer-assistant for the x402 payment protocol: bundled spec corpus, a routing agent, authoring/review/conformance workflows, and a non-custodial conformance MCP. The build/learn/verify companion to the runtime @x402/mcp.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "x402-pilot-skills",
+      "source": "./directory/x402-pilot-skills",
+      "description": "Skills-only edition of x402-pilot: the skills, commands, routing agent and spec corpus, without the conformance MCP server or hook.",
       "version": "0.2.0"
     }
   ]
