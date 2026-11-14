@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- `.claude-plugin/icon.png` — square listing icon for the Claude plugin directory.
+- README section "What it runs and connects to": the SessionStart hook's file reads and the conformance MCP's network calls, stated up front.
 - `.skillspector-baseline.yaml` — every SkillSpector finding on this repo, reviewed against the source and recorded with a reason. See "Scanning this plugin" in `SECURITY.md`.
 
 ### Changed
