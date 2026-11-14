@@ -16,7 +16,7 @@
       "name": "x402-pilot-skills",
       "source": "./directory/x402-pilot-skills",
       "description": "Skills-only edition of x402-pilot: the skills, commands, routing agent and spec corpus, without the conformance MCP server or hook.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }

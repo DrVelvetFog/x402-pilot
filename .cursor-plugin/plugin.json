@@ -1,0 +1,14 @@
+{
+  "name": "x402-pilot",
+  "displayName": "x402-pilot",
+  "version": "0.3.0",
+  "description": "Build, review and verify x402 payment-protocol code: spec-grounded skills, a routing agent, the x402 spec corpus, and non-custodial conformance tools.",
+  "author": { "name": "UIG Studios", "url": "https://github.com/DrVelvetFog" },
+  "license": "Apache-2.0",
+  "logo": ".claude-plugin/icon.png",
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "mcpServers": {
+    "x402-conformance": { "command": "npx", "args": ["-y", "@uigstudios/x402-conformance-mcp"] }
+  }
+}

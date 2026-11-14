@@ -1,0 +1,9 @@
+{
+  "name": "x402-pilot",
+  "version": "0.3.0",
+  "description": "Build, review and verify x402 payment-protocol code: spec-grounded skills, the x402 spec corpus, and non-custodial conformance tools.",
+  "contextFileName": "llms.txt",
+  "mcpServers": {
+    "x402-conformance": { "command": "node", "args": ["${extensionPath}/mcp/x402-conformance-mcp/dist/index.js"] }
+  }
+}

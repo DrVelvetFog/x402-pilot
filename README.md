@@ -44,6 +44,15 @@ Or **try it for one session** without installing — clone the repo and launch:
 claude --plugin-dir ./x402-pilot
 ```
 
+**Other agents:**
+
+| Agent | Install |
+|---|---|
+| Any agent with the `skills` CLI (Cursor, Codex, Copilot and more) | `npx skills add DrVelvetFog/x402-pilot` |
+| Gemini CLI | `gemini extensions install https://github.com/DrVelvetFog/x402-pilot` |
+| Cursor | the repo ships a `.cursor-plugin/plugin.json` |
+| Any MCP client, conformance tools only | `npx -y @uigstudios/x402-conformance-mcp` ([details](mcp/x402-conformance-mcp/README.md)) |
+
 **Use it.** The plugin adds these commands (namespaced under `x402-pilot:`):
 
 | You want to… | Command |

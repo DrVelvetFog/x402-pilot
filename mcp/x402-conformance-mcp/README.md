@@ -20,6 +20,18 @@ either deterministic or network-only-without-secrets. The one flow that settles 
 | `validate_extension` | Structural check of an extension's `{ info, schema }` envelope + light known-extension field checks. | none |
 | `run_conformance` | Drive verify → settle → idempotency → tampered/malformed-reject against a facilitator. Key-free steps always run; keyed steps run only with a supplied `paymentPayload`. | yes |
 
+## Install
+
+It ships inside the [x402-pilot](../../README.md) Claude Code plugin. To use it on its own in any MCP client, no build needed:
+
+```json
+{ "mcpServers": { "x402-conformance": { "command": "npx", "args": ["-y", "@uigstudios/x402-conformance-mcp"] } } }
+```
+
+In Claude Code: `claude mcp add x402-conformance -- npx -y @uigstudios/x402-conformance-mcp`
+
+The npm package bundles a copy of the x402 spec corpus, so `lint_scheme_spec` and `validate_extension` work without the plugin.
+
 ## Build & run
 
 ```bash

@@ -25,6 +25,8 @@ SEMVER = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)*$")
 TARGETS = [
     (ROOT / ".claude-plugin" / "plugin.json", JSON_VER),
     (ROOT / ".claude-plugin" / "marketplace.json", JSON_VER),
+    (ROOT / ".cursor-plugin" / "plugin.json", JSON_VER),
+    (ROOT / "gemini-extension.json", JSON_VER),
 ] + [(f, YAML_VER) for f in sorted((ROOT / "skills").glob("*/SKILL.md"))]
 
 
@@ -33,8 +35,9 @@ def rel(p):
 
 
 def current(path, rx):
-    m = rx.search(path.read_text())
-    return m.group(2) if m else None
+    """The file's version, or a ' / '-joined list when its version fields disagree."""
+    found = sorted({m.group(2) for m in rx.finditer(path.read_text())})
+    return " / ".join(found) if found else None
 
 
 def cmd_check():
@@ -56,7 +59,7 @@ def cmd_bump(new):
     changed = 0
     for p, rx in TARGETS:
         text = p.read_text()
-        out, n = rx.subn(lambda m: m.group(1) + new + m.group(3), text, count=1)
+        out, n = rx.subn(lambda m: m.group(1) + new + m.group(3), text)  # every entry, e.g. each plugin in marketplace.json
         if n:
             p.write_text(out)
             changed += 1
