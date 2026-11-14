@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Conformance MCP 0.1.1: every tool now declares MCP tool annotations (`title`, `readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`). Five tools are read-only; `decode_402` and `inspect_payment_response` may call a URL or RPC you pass in. `run_conformance` is marked not read-only, destructive and non-idempotent because with `allowSettle: true` it settles real testnet value.
+
+### Added
 - The conformance MCP server is packaged for npm as `@uigstudios/x402-conformance-mcp` (the plain `x402-conformance-mcp` name belongs to another project). The package bundles a copy of the spec corpus, so `lint_scheme_spec` and `validate_extension` work outside the plugin. `server.json` for the official MCP Registry sits next to it.
 - `.cursor-plugin/plugin.json` (Cursor), `gemini-extension.json` (Gemini CLI) and `glama.json` (Glama MCP directory), plus a README table of install options for other agents.
 
