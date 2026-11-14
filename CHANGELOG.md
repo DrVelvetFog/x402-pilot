@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `.claude-plugin/icon.png` — square listing icon for the Claude plugin directory.
+- `directory/x402-pilot-skills/` — skills-only "directory edition" (skills, commands, agent, spec corpus; no MCP server, hook or scripts), built by `scripts/build_directory_edition.py` and listed in the marketplace as `x402-pilot-skills`. Anthropic's plugin directory accepts only Markdown, JSON, YAML and images from unverified publishers.
 - README section "What it runs and connects to": the SessionStart hook's file reads and the conformance MCP's network calls, stated up front.
 - `.skillspector-baseline.yaml` — every SkillSpector finding on this repo, reviewed against the source and recorded with a reason. See "Scanning this plugin" in `SECURITY.md`.
 
