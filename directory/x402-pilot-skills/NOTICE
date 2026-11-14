@@ -23,5 +23,6 @@ To refresh the bundled corpus from upstream, run ./sync-specs.sh.
 
 Directory edition (directory/x402-pilot-skills/): the bundled x402 material is
 copied into reference/ instead of .x402-*/, .mdx files are renamed to .md (and
-links to them updated), docs.json is omitted, and the sample signing-key value
-in docs/extensions/offer-receipt.md is replaced with YOUR_SIGNING_PRIVATE_KEY.
+links to them updated), and docs.json and the docs/extensions/offer-receipt
+guide are omitted. The offer-and-receipt protocol spec is still included in
+reference/specs/extensions/.
