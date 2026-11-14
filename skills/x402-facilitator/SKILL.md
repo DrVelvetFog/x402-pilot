@@ -4,7 +4,7 @@ description: "Builds or audits an x402 facilitator — the service that verifies
 license: Apache-2.0
 metadata:
   author: UIG Studios
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # x402-facilitator — build or audit a verify+settle service

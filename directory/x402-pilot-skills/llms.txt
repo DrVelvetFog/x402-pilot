@@ -12,12 +12,13 @@ move money or pay for tools — it helps you *write and verify x402 code*.
 
 ## Bundled corpora (search with Glob + Grep — there is no precomputed index)
 
-- [Protocol specs](reference/specs/): 42 files — the source of truth
+- [Protocol specs](reference/specs/): 50 files — the source of truth
   - `x402-specification-v1.md`, `x402-specification-v2.md` — core protocol
   - `transports-v1/`, `transports-v2/` — `http.md`, `mcp.md`, `a2a.md` bindings
-  - `schemes/exact/` — the `exact` scheme across 12 chains/VMs: `scheme_exact_evm.md`,
+  - `schemes/exact/` — the `exact` scheme across 17 chains/VMs: `scheme_exact_evm.md`,
     `_sui.md`, `_svm.md`, `_aptos.md`, `_ton.md`, `_near.md`, `_stellar.md`, `_hedera.md`,
-    `_algo.md`, `_concordium.md`, `_cardano.md`, `_keeta.md`, plus the chain-agnostic `scheme_exact.md`
+    `_algo.md`, `_concordium.md`, `_cardano.md`, `_keeta.md`, `_canton.md`, `_casper.md`,
+    `_lnbtc.md`, `_starknet.md`, `_xrpl.md`, plus the chain-agnostic `scheme_exact.md`
   - `schemes/upto/`, `schemes/auth-capture/`, `schemes/batch-settlement/` — other scheme families
   - `extensions/` — `extension-offer-and-receipt.md`, `bazaar.md`,
     `eip2612_gas_sponsoring.md`, `erc20_gas_sponsoring.md`, `sign-in-with-x.md`,
@@ -25,7 +26,7 @@ move money or pay for tools — it helps you *write and verify x402 code*.
     `http-message-signatures.md`
   - `scheme_template.md`, `scheme_impl_template.md`, `transport_template.md`,
     `CONTRIBUTING.md` — the authoring templates + the contribution workflow
-- [Guides & concepts](reference/docs/): 31 files — getting-started, core-concepts,
+- [Guides & concepts](reference/docs/): 32 files — getting-started, core-concepts,
   advanced-concepts, guides, dev-tools, schemes, extensions
 - [SDK surface](reference/sdk-docs/): `ts-core.md`, `ts-mcp.md`, `ts-extensions.md`,
   `python-x402.md`

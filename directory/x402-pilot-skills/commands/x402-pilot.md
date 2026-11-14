@@ -12,7 +12,7 @@ x402 payment protocol (HTTP-402, stablecoin-over-HTTP, for APIs and AI agents).
 
 The agent provides:
 - **Spec-grounded guidance** from the bundled x402 corpus (protocol v1/v2, transports,
-  the `exact` scheme across 12 chains, other scheme families, extensions, templates)
+  the `exact` scheme across 17 chains, other scheme families, extensions, templates)
 - **Authoring workflows** for paid endpoints, facilitators, schemes, and extensions
 - **Spec-compliance review** and end-to-end **conformance verification**
 - The **contribution rules** for x402-foundation/x402 and hard-won facilitator lessons

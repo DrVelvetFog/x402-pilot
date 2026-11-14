@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-14
+
+### Changed
+- Bundled corpus re-synced from upstream x402-foundation/x402 @ `1a08434` (was the 2026-06-18 snapshot): 86 files, up from 77. The `exact` scheme now covers 17 chains, adding Canton, Casper, LN-BTC, Starknet and XRPL. Also new: `upto` for SVM and XRPL, `batch-settlement` for SVM, a wallet-compatibility guide, and upstream's SVM transaction v1, multi-payee splits, facilitator error messages and batch-settlement voucher mode. The MCP-server guide moved upstream from `.md` to `.mdx`.
+- README, `llms.txt`, `/x402-pilot` and the hero image updated for 17 chains and 86 files. The hero image's command count is corrected from 7 to 8.
+
 ### Added
 - `.claude-plugin/icon.png` — square listing icon for the Claude plugin directory.
 - `directory/x402-pilot-skills/` — skills-only "directory edition" (skills, commands, agent, spec corpus; no MCP server, hook or scripts), built by `scripts/build_directory_edition.py` and listed in the marketplace as `x402-pilot-skills`. Anthropic's plugin directory accepts only Markdown, JSON, YAML and images from unverified publishers.

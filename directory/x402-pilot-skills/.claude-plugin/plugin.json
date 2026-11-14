@@ -2,7 +2,7 @@
   "name": "x402-pilot-skills",
   "displayName": "x402-pilot (skills edition)",
   "description": "Skills, commands and a routing agent for building, reviewing and verifying x402 payment-protocol code, with the x402 spec corpus bundled for offline search. The skills-only edition of x402-pilot.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "UIG Studios",
     "url": "https://github.com/DrVelvetFog"

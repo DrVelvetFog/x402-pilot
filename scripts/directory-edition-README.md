@@ -18,7 +18,7 @@ In Claude Code:
 - **Skills:** `x402-gate` (charge for an HTTP endpoint), `x402-facilitator` (build or audit a facilitator), `x402-scheme` (draft a payment scheme), `x402-extension` (draft an extension), `x402-review` (spec-compliance review of x402 code or a PR), `x402-verify` (the verify, settle, idempotency and rejection checks against a facilitator), `x402-spend-limit` (cap what an agent can spend).
 - **Commands:** `/x402-pilot` plus one per skill.
 - **Agent:** `x402-pilot-agent` routes a question to the right part of the spec and carries the rules that keep money code correct.
-- **Reference corpus** in `reference/`: protocol v1 and v2, HTTP/MCP/A2A transports, the `exact` scheme across 12 chains, other scheme families, extension specs, authoring templates and SDK READMEs.
+- **Reference corpus** in `reference/`: protocol v1 and v2, HTTP/MCP/A2A transports, the `exact` scheme across 17 chains, other scheme families, extension specs, authoring templates and SDK READMEs.
 
 ## What this edition leaves out
 

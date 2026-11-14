@@ -8,7 +8,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
 [![x402](https://img.shields.io/badge/x402-12%20chains-1f6feb)](https://github.com/x402-foundation/x402)
 
-**8 commands · 6 conformance MCP tools · offline spec corpus across 12 chains · non-custodial (holds no keys, signs nothing).**
+**8 commands · 6 conformance MCP tools · offline spec corpus across 17 chains · non-custodial (holds no keys, signs nothing).**
 
 **The developer-assistant for the [x402](https://github.com/x402-foundation/x402) payment protocol** — a Claude Code plugin that bundles the x402 spec surface and gives your agent the context and workflows to *build, learn, and verify* x402 code.
 
@@ -20,7 +20,7 @@ x402-pilot is the **build/learn/verify** companion to the official **runtime** p
 
 | Piece | Status |
 |---|---|
-| **Bundled spec corpus** — 77 files: protocol v1/v2, transports (http/mcp/a2a), `exact` scheme across 12 chains (EVM, Sui, SVM, Aptos, TON, NEAR, Stellar, Hedera, Algorand, Concordium, Cardano, Keeta), other scheme families, extension specs, authoring templates, SDK READMEs | ✅ Phase 0 |
+| **Bundled spec corpus** — 86 files: protocol v1/v2, transports (http/mcp/a2a), `exact` scheme across 17 chains (EVM, Sui, SVM, Aptos, TON, NEAR, Stellar, Hedera, Algorand, Concordium, Cardano, Keeta, Canton, Casper, LN-BTC, Starknet, XRPL), other scheme families, extension specs, authoring templates, SDK READMEs | ✅ Phase 0 |
 | **Routing agent** (`agents/x402-pilot-agent.md`) — routes a topic to the right corpus; carries the contribution rules + facilitator-implementation lessons | ✅ Phase 0 |
 | **`llms.txt`** — AI entry-point manifest | ✅ Phase 0 |
 | **Commands / skills** — `/x402-pilot`, `/x402-gate`, `/x402-facilitator`, `/x402-scheme`, `/x402-extension`, `/x402-review`, `/x402-verify`, `/x402-spend-limit` | ✅ Phase 1 |
