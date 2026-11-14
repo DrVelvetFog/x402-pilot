@@ -35,8 +35,9 @@ NOTE = (
     "live call is needed) and tell the user which steps you did manually. Full plugin: " + REPO + "\n"
 )
 
-# Upstream sample values the directory's secret scan flags. Replaced with obvious placeholders.
-PLACEHOLDERS = [("0xYourDedicatedSigningPrivateKey", "YOUR_SIGNING_PRIVATE_KEY")]
+# Upstream guides left out because the directory's secret scan blocks their sample key
+# material (env-var private keys, a literal PEM header). The matching protocol spec stays.
+EXCLUDE = {".x402-docs/extensions/offer-receipt.mdx"}
 
 
 def rewrite_paths(text: str) -> str:
@@ -77,9 +78,9 @@ def build(out: Path) -> None:
         for src in sorted((ROOT / old).rglob("*")):
             if not src.is_file() or src.suffix not in (".md", ".mdx"):
                 continue  # drops docs.json (site navigation config, not documentation)
+            if str(src.relative_to(ROOT)) in EXCLUDE:
+                continue
             text = rewrite_paths(src.read_text(encoding="utf-8"))
-            for bad, good in PLACEHOLDERS:
-                text = text.replace(bad, good)
             rel = src.relative_to(ROOT / old).with_suffix(".md")
             write(out / new / rel, text)
     write(out / "llms.txt", rewrite_paths((ROOT / "llms.txt").read_text(encoding="utf-8")))
@@ -104,8 +105,9 @@ def build(out: Path) -> None:
     write(out / "NOTICE", (ROOT / "NOTICE").read_text(encoding="utf-8") + (
         "\nDirectory edition (directory/x402-pilot-skills/): the bundled x402 material is\n"
         "copied into reference/ instead of .x402-*/, .mdx files are renamed to .md (and\n"
-        "links to them updated), docs.json is omitted, and the sample signing-key value\n"
-        "in docs/extensions/offer-receipt.md is replaced with YOUR_SIGNING_PRIVATE_KEY.\n"
+        "links to them updated), and docs.json and the docs/extensions/offer-receipt\n"
+        "guide are omitted. The offer-and-receipt protocol spec is still included in\n"
+        "reference/specs/extensions/.\n"
     ))
 
     big = [p for p in out.rglob("*") if p.is_file() and p.suffix != ".png" and p.stat().st_size > MAX_BYTES]
