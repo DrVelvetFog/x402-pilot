@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.DrVelvetFog/x402-conformance-mcp",
+  "title": "x402 Conformance Tools",
+  "description": "Non-custodial x402 checks: decode 402s, verify settlements on-chain, lint specs, test facilitators.",
+  "version": "0.1.0",
+  "repository": { "url": "https://github.com/DrVelvetFog/x402-pilot", "source": "github", "subfolder": "mcp/x402-conformance-mcp" },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@uigstudios/x402-conformance-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}

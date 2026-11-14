@@ -11,6 +11,7 @@ await build({
   minify: true,
   banner: {
     js: [
+      '#!/usr/bin/env node',
       "import { createRequire as __esbuildCreateRequire } from 'module';",
       "import { fileURLToPath as __esbuildFileURLToPath } from 'url';",
       "import { dirname as __esbuildDirname } from 'path';",

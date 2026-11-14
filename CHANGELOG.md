@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- The conformance MCP server is packaged for npm as `@uigstudios/x402-conformance-mcp` (the plain `x402-conformance-mcp` name belongs to another project). The package bundles a copy of the spec corpus, so `lint_scheme_spec` and `validate_extension` work outside the plugin. `server.json` for the official MCP Registry sits next to it.
+- `.cursor-plugin/plugin.json` (Cursor), `gemini-extension.json` (Gemini CLI) and `glama.json` (Glama MCP directory), plus a README table of install options for other agents.
+
+### Fixed
+- `scripts/bump_version.py` now updates and checks every version entry in a file. Before, it only touched the first, so the `x402-pilot-skills` entry in `marketplace.json` stayed at 0.2.0 in the 0.3.0 release.
+- The conformance server's build output starts with `#!/usr/bin/env node`, so it runs as an installed command.
+
 ## [0.3.0] - 2026-11-14
 
 ### Changed

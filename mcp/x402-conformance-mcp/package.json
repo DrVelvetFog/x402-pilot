@@ -1,13 +1,51 @@
 {
-  "name": "x402-conformance-mcp",
+  "name": "@uigstudios/x402-conformance-mcp",
   "version": "0.1.0",
-  "description": "MCP server with x402 conformance + compliance tools: decode a 402 PaymentRequired, inspect a PAYMENT-RESPONSE (with on-chain net-balance truth check), lint a scheme spec, validate an extension payload, statically check code for spec-compliance, and run the verify/settle/idempotency conformance flow against a facilitator. Holds no keys — non-custodial by design.",
+  "description": "MCP server with x402 conformance + compliance tools: decode a 402 PaymentRequired, inspect a PAYMENT-RESPONSE (with on-chain net-balance truth check), lint a scheme spec, validate an extension payload, statically check code for spec-compliance, and run the verify/settle/idempotency conformance flow against a facilitator. Holds no keys \u2014 non-custodial by design.",
+  "mcpName": "io.github.DrVelvetFog/x402-conformance-mcp",
   "type": "module",
-  "private": true,
+  "bin": {
+    "x402-conformance-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    ".x402-specs",
+    "README.md"
+  ],
   "scripts": {
     "build": "node esbuild.config.mjs",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "node test/smoke.mjs",
+    "prepack": "rm -rf .x402-specs && cp -R ../../.x402-specs .x402-specs && npm run build",
+    "postpack": "rm -rf .x402-specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrVelvetFog/x402-pilot.git",
+    "directory": "mcp/x402-conformance-mcp"
+  },
+  "homepage": "https://github.com/DrVelvetFog/x402-pilot/tree/main/mcp/x402-conformance-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/DrVelvetFog/x402-pilot/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "x402",
+    "payments",
+    "http-402",
+    "conformance",
+    "facilitator",
+    "model-context-protocol"
+  ],
+  "author": "Tony Jagodka (UIG Studios)",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2"

@@ -5,3 +5,6 @@ node_modules/
 
 # The MCP's bundled dist/index.js IS committed (Claude Code runs it directly on
 # install — no build step). Rebuild it with: cd mcp/x402-conformance-mcp && npm run build
+
+# npm package copy of the corpus (made by prepack, removed by postpack)
+mcp/x402-conformance-mcp/.x402-specs/
