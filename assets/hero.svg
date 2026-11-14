@@ -34,9 +34,9 @@
   <text x="88" y="394" font-size="19" fill="#c9d1d9">/x402-review</text>
   <text x="300" y="394" font-size="16" fill="#6e7681">lint for hardcoded chain / decimals</text>
   <!-- right rail stats -->
-  <text x="1216" y="286" text-anchor="end" font-size="15" fill="#8b949e">7 commands</text>
+  <text x="1216" y="286" text-anchor="end" font-size="15" fill="#8b949e">8 commands</text>
   <text x="1216" y="316" text-anchor="end" font-size="15" fill="#8b949e">6 conformance MCP tools</text>
-  <text x="1216" y="346" text-anchor="end" font-size="15" fill="#8b949e">12 chains</text>
+  <text x="1216" y="346" text-anchor="end" font-size="15" fill="#8b949e">17 chains</text>
   <text x="1216" y="376" text-anchor="end" font-size="15" fill="#27c93f">non-custodial · holds no keys</text>
   <text x="1216" y="406" text-anchor="end" font-size="13" fill="#6e7681">Apache-2.0 · UIG Studios</text>
 </svg>
