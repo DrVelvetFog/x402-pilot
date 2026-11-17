@@ -7,6 +7,7 @@
 [![license](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757)](https://docs.claude.com/en/docs/claude-code)
 [![x402](https://img.shields.io/badge/x402-12%20chains-1f6feb)](https://github.com/x402-foundation/x402)
+[![x402 Conformance Tools MCP server](https://mcprush.com/badge/x402-conformance-tools-mcp/compact.svg)](https://mcprush.com/to/x402-conformance-tools-mcp?ref=badge)
 
 **8 commands · 6 conformance MCP tools · offline spec corpus across 17 chains · non-custodial (holds no keys, signs nothing).**
 
