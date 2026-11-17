@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Conformance MCP 0.1.2: no code changes; republished so the npm page shows the README's new mcprush badge.
 - Conformance MCP 0.1.1: every tool now declares MCP tool annotations (`title`, `readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`). Five tools are read-only; `decode_402` and `inspect_payment_response` may call a URL or RPC you pass in. `run_conformance` is marked not read-only, destructive and non-idempotent because with `allowSettle: true` it settles real testnet value.
 
 ### Added

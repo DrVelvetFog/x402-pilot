@@ -155,7 +155,7 @@ const HANDLERS: Record<string, Handler> = {
 };
 
 export function createServer(): Server {
-  const server = new Server({ name: 'x402-conformance', version: '0.1.1' }, { capabilities: { tools: {} } });
+  const server = new Server({ name: 'x402-conformance', version: '0.1.2' }, { capabilities: { tools: {} } });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));
 

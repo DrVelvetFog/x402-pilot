@@ -3,7 +3,7 @@
   "name": "io.github.DrVelvetFog/x402-conformance-mcp",
   "title": "x402 Conformance Tools",
   "description": "Non-custodial x402 checks: decode 402s, verify settlements on-chain, lint specs, test facilitators.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "url": "https://github.com/DrVelvetFog/x402-pilot",
     "source": "github",
@@ -13,7 +13,7 @@
     {
       "registryType": "npm",
       "identifier": "@uigstudios/x402-conformance-mcp",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "transport": {
         "type": "stdio"
       }

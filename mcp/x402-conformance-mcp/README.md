@@ -1,5 +1,7 @@
 # x402-conformance-mcp
 
+[![x402 Conformance Tools MCP server](https://mcprush.com/badge/x402-conformance-tools-mcp/compact.svg)](https://mcprush.com/to/x402-conformance-tools-mcp?ref=badge)
+
 An MCP server with **x402 conformance + compliance tools**. It is the executable layer
 of [x402-pilot](../../README.md) — the part that gives an agent verbs it can *run*, not
 just docs it can read.
